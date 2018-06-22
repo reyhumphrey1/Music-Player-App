@@ -28,8 +28,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/pause"
-        android:id="@+id/button_pause"
+        android:text="@string/play"
+        android:id="@+id/button_play"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@id/button_forward"
         />
@@ -37,17 +37,17 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/back"
-        android:id="@+id/button_back"
+        android:text="@string/pause"
+        android:id="@+id/button_pause"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@id/button_pause"/>
+        android:layout_toRightOf="@id/button_play"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/rewind"
         android:id="@+id/button_rewind"
-        android:layout_toRightOf="@id/button_back"
+        android:layout_toRightOf="@id/button_pause"
         android:layout_alignParentBottom="true"/>
 
     <SeekBar
@@ -55,8 +55,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/seekBar"
         android:layout_above="@id/button_forward"
-        android:layout_alignStart="@id/button_pause"
-        android:layout_alignEnd="@id/button_back"
+        android:layout_alignStart="@id/button_play"
+        android:layout_alignEnd="@id/button_pause"
         android:background="#d3d3d3"/>
 
     <TextView

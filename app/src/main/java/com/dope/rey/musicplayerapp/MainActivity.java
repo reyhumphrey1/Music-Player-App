@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button buttonForward, buttonPause, buttonBack, buttonRewind;
+    private Button buttonForward, buttonPause, buttonPlay, buttonRewind;
     private MediaPlayer mediaPlayer;
 
     private double startTime = 0;
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         buttonForward = findViewById(R.id.button_forward);
         buttonPause = findViewById(R.id.button_pause);
-        buttonBack = findViewById(R.id.button_back);
+        buttonPlay = findViewById(R.id.button_play);
         buttonRewind = findViewById(R.id.button_rewind);
 
         startSongLength = findViewById(R.id.start_song_length);
@@ -47,9 +47,8 @@ public class MainActivity extends AppCompatActivity {
         mediaPlayer = MediaPlayer.create(this,R.raw.mankind_north);
         seekbar = findViewById(R.id.seekBar);
         seekbar.setClickable(false);
-        buttonPause.setEnabled(false);
 
-        buttonBack.setOnClickListener(new View.OnClickListener() {
+        buttonPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -65,9 +64,13 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 seekbar.setProgress((int) startTime);
-               // myhandler.postDelayed(UpdateSongTime, 100);
-                buttonPause.setEnabled(false);
-                buttonBack.setEnabled(true);
+            }
+        });
+
+        buttonPause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer.pause();
             }
         });
 
